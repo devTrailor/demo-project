@@ -221,7 +221,7 @@ Learn more at AnimaApp.com"
 
       <section className="latest-works-sec">
         <div className="container py-[42px]">
-          <motion.h2
+          <motion.h1
             className="mb-[42px] capitalize text-center font-[600] text-[32px] leading-[42px]"
             variants={textVariantMain}
             initial="hidden"
@@ -229,7 +229,7 @@ Learn more at AnimaApp.com"
             viewport={{ once: true, amount: 0.5 }}
           >
             latest work
-          </motion.h2>
+          </motion.h1>
           <motion.div
             className="latest-work-wrapper grid grid-cols-3 gap-6"
             initial="hidden"
@@ -257,12 +257,12 @@ Learn more at AnimaApp.com"
 
       <section className="testimonials-sec">
         <div className="container py-[42px]">
-          <motion.h2 className="mb-[42px] capitalize text-center font-[600] text-[32px] leading-[42px]" variants={textVariantMain}
+          <motion.h1 className="mb-[42px] capitalize text-center font-[600] text-[32px] leading-[42px]" variants={textVariantMain}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}>
             Testimonial
-          </motion.h2>
+          </motion.h1>
           <motion.div className="testimonials-wrapper grid grid-cols-3 gap-6" initial="hidden"
             variants={containerVariant}
             whileInView="visible"
