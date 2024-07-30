@@ -1,8 +1,24 @@
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
+import { star } from "@/assets";
 
 const TestimonialCard = ({ testimonialsData, testimonialsVariant }) => {
+  const ratingArray = testimonialsData?.ratings;
+  const maxStars = Math.max(...ratingArray); // Determine the maximum number in the array
+
+  const renderStars = (number) => {
+    return Array.from({ length: number }).map((_, index) => (
+      <li key={index}>
+        <Image
+          src={star}
+          alt="star"
+          style={{ width: "20px", height: "20px" }}
+        />
+      </li>
+    ));
+  };
+
   return (
     <motion.div
       className="bg-light-gray p-[42px]"
@@ -19,17 +35,7 @@ const TestimonialCard = ({ testimonialsData, testimonialsVariant }) => {
         />
         <div className="">
           <ul className="ratings flex gap-[6px] mb-[11px]">
-            {testimonialsData?.ratings?.map((elm, i) => {
-              return (
-                <li key={elm + i}>
-                  <Image
-                    src={elm}
-                    alt="user"
-                    className="h-[20px] w-[20px] cursor-pointer"
-                  />
-                </li>
-              );
-            })}
+            {renderStars(maxStars)}
           </ul>
           <h4 className="font-[600] text-[20px] leading-[30px]">
             {testimonialsData?.name}
